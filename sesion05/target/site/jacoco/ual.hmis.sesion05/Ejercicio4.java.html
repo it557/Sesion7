@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio4.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sesion05Junit</a> &gt; <a href="index.source.html" class="el_package">ual.hmis.sesion05</a> &gt; <span class="el_source">Ejercicio4.java</span></div><h1>Ejercicio4.java</h1><pre class="source lang-java linenums">package ual.hmis.sesion05;
+
+<span class="fc" id="L3">public class Ejercicio4 {</span>
+    public static int[][] obtenerDiagonales(int[][] matriz) {
+<span class="fc bfc" id="L5" title="All 2 branches covered.">        if (matriz.length != matriz[0].length)</span>
+<span class="fc" id="L6">            throw new RuntimeException(&quot;La matriz introducida no es cuadrada&quot;);</span>
+<span class="fc" id="L7">        int n = matriz.length;</span>
+<span class="fc" id="L8">        int[][] diagonales = new int[2][n];</span>
+<span class="fc bfc" id="L9" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L10">            diagonales[0][i] = matriz[i][i];</span>
+<span class="fc" id="L11">            diagonales[1][i] = matriz[n - 1 - i][n - 1 - i];</span>
+        }
+<span class="fc" id="L13">        return diagonales;</span>
+    }
+
+    public static double[] sumarColumnas(double[][] matriz) {
+<span class="fc" id="L17">        int n = matriz.length;</span>
+<span class="fc" id="L18">        double[] sumaColumnas = new double[n];</span>
+
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        for (int j = 0; j &lt; n; j++) {</span>
+<span class="fc" id="L21">            double suma = 0.0;</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">            for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L23">                suma += matriz[i][j];</span>
+            }
+<span class="fc" id="L25">            sumaColumnas[j] = suma;</span>
+        }
+
+<span class="fc" id="L28">        return sumaColumnas;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

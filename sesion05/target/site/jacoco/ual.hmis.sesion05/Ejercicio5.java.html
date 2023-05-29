@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio5.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sesion05Junit</a> &gt; <a href="index.source.html" class="el_package">ual.hmis.sesion05</a> &gt; <span class="el_source">Ejercicio5.java</span></div><h1>Ejercicio5.java</h1><pre class="source lang-java linenums">package ual.hmis.sesion05;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L6">public class Ejercicio5 {</span>
+    public static  &lt;T extends Comparable&lt;T&gt;&gt; List&lt;T&gt; union(List&lt;T&gt; list1, List&lt;T&gt; list2) {
+<span class="fc" id="L8">        ArrayList&lt;T&gt; res = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L9" title="All 4 branches covered.">        if (list1 == null || list1.isEmpty()) {</span>
+<span class="pc bpc" id="L10" title="1 of 2 branches missed.">            if (list2!=null)res.addAll(list2);</span>
+<span class="fc" id="L11">            return res;</span>
+        }
+<span class="pc bpc" id="L13" title="1 of 4 branches missed.">        if (list2==null || list2.size()==0) {</span>
+<span class="pc bpc" id="L14" title="1 of 2 branches missed.">            if (list1!=null)res.addAll(list1);</span>
+<span class="fc" id="L15">            return res;</span>
+        }
+<span class="fc" id="L17">        int pos1=0, pos2=0;</span>
+<span class="fc bfc" id="L18" title="All 4 branches covered.">        while(pos1&lt;list1.size() || pos2&lt;list2.size()) {</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">            if(pos1 &gt;= list1.size()) {</span>
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">                if (! res.contains(list2.get(pos2))) res.add(list2.get(pos2));</span>
+<span class="fc" id="L21">                pos2++;</span>
+<span class="fc" id="L22">                continue;</span>
+            }
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if(pos2 &gt;= list2.size()){</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">                if(!res.contains(list1.get(pos1)))res.add(list1.get(pos1));</span>
+<span class="fc" id="L26">                pos1++;</span>
+<span class="fc" id="L27">                continue;</span>
+            }
+<span class="fc" id="L29">            int cmp = list1.get(pos1).compareTo(list2.get(pos2));</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (cmp&lt;=0) res.add(list1.get(pos1++));</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (cmp&gt;0) res.add(list2.get(pos2++));</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">            if (cmp==0) pos2++;</span>
+<span class="fc" id="L33">        }</span>
+<span class="fc" id="L34">        return res;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

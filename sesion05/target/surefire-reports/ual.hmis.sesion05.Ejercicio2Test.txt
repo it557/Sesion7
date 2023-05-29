@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ual.hmis.sesion05.Ejercicio2Test
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in ual.hmis.sesion05.Ejercicio2Test

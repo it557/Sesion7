@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sesion05Junit</a> &gt; <a href="index.source.html" class="el_package">ual.hmis.sesion05</a> &gt; <span class="el_source">Ejercicio2.java</span></div><h1>Ejercicio2.java</h1><pre class="source lang-java linenums">package ual.hmis.sesion05;
+
+<span class="fc" id="L3">public class Ejercicio2 {</span>
+	public boolean login (String username, String password){
+		// comprobar que sean distintos de vacio
+<span class="pc bpc" id="L6" title="1 of 4 branches missed.">		if (username==&quot;&quot; || password.isEmpty())</span>
+<span class="fc" id="L7">			return false;</span>
+		// comprobar que la longitud sea &lt; 30
+<span class="fc bfc" id="L9" title="All 4 branches covered.">		if (username.length()&gt;= 30 || password.length()&gt;=30)</span>
+<span class="fc" id="L10">			return false;</span>
+		// llamar al método de la bbdd
+<span class="fc" id="L12">		return compruebaLoginEnBD(username, password);</span>
+
+	}
+
+	public boolean compruebaLoginEnBD
+	(String username, String password){
+		// método mock (simulado)
+<span class="fc bfc" id="L19" title="All 4 branches covered.">		if (username.equals(&quot;user&quot;) &amp;&amp; password.equals(&quot;pass&quot;))</span>
+<span class="fc" id="L20">			return true;</span>
+		else
+<span class="fc" id="L22">			return false;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
